@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Feedback System</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.2.7-rc.0/web3.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Student Feedback System</h1>
+    </div>
+
+    <div class="content">
+      <div class="button-container">
+        <button onclick="connectMetamask()">Connect to Metamask</button>
+        <p id="accountArea"></p>
+      </div>
+
+      <div class="button-container">
+          <button onclick="connectContract()">Load Contract</button>
+          <p id="contractArea"></p>
+      </div>
+      <p id="notRegisteredText" style="display: none; color: red;">Not a registered user</p>
+
+      <div class="form-container">
+        <div class="form-group">
+          <form name="assignTeacherRole" onsubmit="event.preventDefault(); addTeacherRole()">
+            <h2>Add Teacher Role</h2>
+              <label for="teacherAccountAddress">Account Address:</label>
+              <input type="text" id="teacherAccountAddress" name="teacherAccountAddress"><br>
+              <button type="submit">Add Teacher Role</button>
+            </form>
+          <p id="addTeacherRoleResult"></p>
+        </div>
+          <div class="form-group">
+            <form name="assignStudentRole" onsubmit="event.preventDefault(); addStudentRole()">
+              <h2>Add Student Role</h2>
+                <label for="studentAccountAddress">Account Address:</label>
+                <input type="text" id="studentAccountAddress" name="studentAccountAddress"><br>
+                <button type="submit">Add Student Role</button>
+              </form>
+            <p id="addStudentRoleResult"></p>
+          </div>
+        <div class="form-group">
+          <form name="addTeacherForm" onsubmit="event.preventDefault(); addTeacher()">
+            <h2>Add Teacher</h2>
+              <label for="teacherCode">Teacher Code:</label>
+              <input type="text" id="teacherCode" name="teacherCode"><br>
+              <label for="subjectCodes">Subject Codes (comma-separated):</label>
+              <input type="text" id="subjectCodes" name="subjectCodes"><br>
+              <label for="studentCounts">Student Counts (comma-separated):</label>
+              <input type="text" id="studentCounts" name="studentCounts"><br>
+              <button type="submit">Add Teacher</button>
+          </form>
+          <p id="addTeacherResult"></p>
+        </div>
+
+        <div class="form-group">
+          <form name="getTeacherForm" onsubmit="event.preventDefault(); getTeacher()">
+            <h2>Get Teacher</h2>
+              <label for="teacherCode1">Teacher Code:</label>
+              <input type="text" id="teacherCode1" name="teacherCode1"><br>
+              <button type="submit">Get Teacher</button>
+          </form>
+          <p id="teacherCodeResult"></p>
+          <p id="subjectCodeResult"></p>
+        </div>
+
+        <div class="form-group">
+          <form name="getPasswordsForm" onsubmit="event.preventDefault(); getPasswords()">
+            <h2>Get Passwords</h2>
+              <label for="teacherCode2">Teacher Code:</label>
+              <input type="text" id="teacherCode2" name="teacherCode2"><br>
+              <label for="subjectCode">Subject Code:</label>
+              <input type="text" id="subjectCode" name="subjectCode"><br>
+              <button type="submit">Get Passwords</button>
+          </form>
+          <p id="passwordsResult"></p>
+        </div>
+
+        <div class="form-group">
+          <form name="getReviewForm" onsubmit="event.preventDefault(); getReview()">
+            <h2>Get Review</h2>
+              <label for="teacherCode3">Teacher Code:</label>
+              <input type="text" id="teacherCode3" name="teacherCode3"><br>
+              <label for="subjectCode2">Subject Code:</label>
+              <input type="text" id="subjectCode2" name="subjectCode2"><br>
+              <button type="submit">Get Review</button>
+          </form>
+          <p id="ratingResult"></p>
+          <p id="reviewResult"></p>
+        </div>
+
+        <div class="form-group">
+          
+          <form name="addReviewForm" onsubmit="event.preventDefault(); addReview()">
+            <h2>Add Review</h2>
+              <label for="teacherCode4">Teacher Code:</label>
+              <input type="text" id="teacherCode4" name="teacherCode4"><br>
+              <label for="subjectCode3">Subject Code:</label>
+              <input type="text" id="subjectCode3" name="subjectCode3"><br>
+              <label for="rating">Rating:</label>
+              <input type="number" id="rating" name="rating" min="1" max="5"><br>
+              <label for="comments">Comments:</label>
+              <textarea id="comments" name="comments"></textarea><br>
+              <label for="password">Password:</label>
+              <input type="number" id="password" name="password"><br>
+              <button type="submit">Add Review</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+    </body>
+</html>

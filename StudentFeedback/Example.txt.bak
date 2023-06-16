@@ -1,0 +1,16 @@
+let studentFeedback = await StudentFeedbackSystem.deployed()
+
+let accounts = await web3.eth.getAccounts()
+
+studentFeedback.addStudent(accounts[2])
+studentFeedback.addTeacher(accounts[1])
+studentFeedback.addTeacher("Anand1",["CSE01","CSE02"],[5,3])
+
+studentFeedback.getPasswords("Anand1","CSE01")
+studentFeedback.getPasswords("Anand1","CSE02")
+
+
+studentFeedback.addReview("Anand1","CSE01",5,"Good",96216,{from: accounts[2]})
+
+studentFeedback.getReview("Anand1","CSE01")
+studentFeedback.getReview("Anand1","CSE01",{from: accounts[2]})

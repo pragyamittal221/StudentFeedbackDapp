@@ -1,0 +1,30 @@
+let studentFeedback = await StudentFeedbackSystem.deployed()
+
+let accounts = await web3.eth.getAccounts()
+
+studentFeedback.addStudent(accounts[2])
+studentFeedback.addTeacher(accounts[1])
+
+studentFeedback.isStudent(accounts[2])
+studentFeedback.isTeacher(accounts[1])
+
+studentFeedback.addTeacher("Anand1",["CSE01","CSE02"],[5,3])
+
+studentFeedback.addTeacher("Bapatla1",["CSE01","CSE02"],[5,3])
+
+studentFeedback.getPasswords("Anand1","CSE01")
+studentFeedback.getPasswords("Anand1","CSE02")
+
+studentFeedback.getPasswords("Bapatla1","CSE01")
+
+
+studentFeedback.addReview("Anand1","CSE01",5,"Good",98214,{from: accounts[2]})
+
+studentFeedback.getReview("Anand1","CSE01")
+studentFeedback.getReview("Anand1","CSE01",{from: accounts[2]})
+studentFeedback.getReview("Anand1","CSE01",{from: accounts[1]})
+
+0xc926402D677BB351959AD7054BedDaF601270633
+
+
+truffle deploy --reset
