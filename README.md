@@ -4,7 +4,8 @@ A decentralised app where students can give feedbacks to their professors in a t
 # Requirement list
 1. VS Code (optional, any other text editor works)
 2. Node
-3. Truffle
-4. Ganache
-5. Metamask 
-6. Requirements.txt (inside the StudentFeedbackUI directory)
+3. Git
+4. Truffle
+5. Ganache
+6. Metamask 
+7. Requirements.txt (inside the StudentFeedbackUI directory)
