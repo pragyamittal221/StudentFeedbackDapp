@@ -87,7 +87,7 @@
   "sourceMap": "108:1391:1:-;;;315:118;8:9:-1;5:2;;;30:1;27;20:12;5:2;315:118:1;359:10;347:9;;:22;;;;;;;;;;;;;;;;;;415:9;;;;;;;;;;;385:40;;411:1;385:40;;;;;;;;;;;;108:1391;;;;;;",
   "deployedSourceMap": "108:1391:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;108:1391:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;923:143;;;:::i;:::-;;772:95;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;483:88;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;1130:109;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1130:109:1;;;;;;;;;;;;;;;;;;;:::i;:::-;;923:143;667:9;:7;:9::i;:::-;659:18;;;;;;1022:1;985:40;;1003:9;;;;;;;;;;;985:40;;;;;;;;;;;;1056:1;1036:9;;:22;;;;;;;;;;;;;;;;;;923:143::o;772:95::-;812:4;850:9;;;;;;;;;;;836:23;;:10;:23;;;829:30;;772:95;:::o;483:88::-;527:7;554:9;;;;;;;;;;;547:16;;483:88;:::o;1130:109::-;667:9;:7;:9::i;:::-;659:18;;;;;;1203:28;1222:8;1203:18;:28::i;:::-;1130:109;:::o;1306:190::-;1400:1;1380:22;;:8;:22;;;;1372:31;;;;;;1448:8;1419:38;;1437:9;;;;;;;;;;;1419:38;;;;;;;;;;;;1480:8;1468:9;;:20;;;;;;;;;;;;;;;;;;1306:190;:::o",
   "source": "// SPDX-License-Identifier: GPL-3.0\r\npragma solidity >=0.4.24;\r\n\r\n/// Provides basic authorization control\r\ncontract Ownable {\r\n    address private origOwner;\r\n\r\n    // Define an Event\r\n    event TransferOwnership(address indexed oldOwner, address indexed newOwner);\r\n\r\n    /// Assign the contract to an owner\r\n    constructor () public{\r\n        origOwner = msg.sender;\r\n        emit TransferOwnership(address(0), origOwner);\r\n    }\r\n\r\n    /// Look up the address of the owner\r\n    function ownerLookup() public view returns (address) {\r\n        return origOwner;\r\n    }\r\n\r\n    /// Define a function modifier 'onlyOwner'\r\n    modifier onlyOwner() {\r\n        require(isOwner());\r\n        _;\r\n    }\r\n\r\n    /// Check if the calling address is the owner of the contract\r\n    function isOwner() public view returns (bool) {\r\n        return msg.sender == origOwner;\r\n    }\r\n\r\n    /// Define a function to renounce ownerhip\r\n    function renounceOwnership() public onlyOwner {\r\n        emit TransferOwnership(origOwner, address(0));\r\n        origOwner = address(0);\r\n    }\r\n\r\n    /// Define a public function to transfer ownership\r\n    function transferOwnership(address newOwner) public onlyOwner {\r\n        _transferOwnership(newOwner);\r\n    }\r\n\r\n    /// Define an internal function to transfer ownership\r\n    function _transferOwnership(address newOwner) internal {\r\n        require(newOwner != address(0));\r\n        emit TransferOwnership(origOwner, newOwner);\r\n        origOwner = newOwner;\r\n    }\r\n}\r\n",
-  "sourcePath": "C:\\Users\\pragy\\Desktop\\Workspaces\\StudentFeedbackDapp\\StudentFeedback\\contracts\\Ownable.sol",
+  "sourcePath": "C:\\Users\\pragy\\Desktop\\Workspaces\\STABLE - StudentFeedbackDapp v1.0\\StudentFeedbackDapp\\StudentFeedback\\contracts\\Ownable.sol",
   "ast": {
     "absolutePath": "project:/contracts/Ownable.sol",
     "exportedSymbols": {
@@ -2983,7 +2983,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.14",
-  "updatedAt": "2023-06-13T09:36:26.854Z",
+  "updatedAt": "2023-06-17T09:34:19.598Z",
   "devdoc": {
     "methods": {}
   },

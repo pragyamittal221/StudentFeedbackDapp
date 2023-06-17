@@ -31,7 +31,7 @@ const connectContract = async () => {
 console.log('Started');
               
 /**************************                  Change this if new contract deployed                    *****************************/ 
-const Address = "0xF680138B30d325D1D784961DB6255DE9c68C7473";
+const Address = "0x52Cf4b062F03E454D1AAFA983396B943072cd873";
 /*********************************************************************************************************************************/
 
 window.web3 = await new Web3(window.ethereum);
